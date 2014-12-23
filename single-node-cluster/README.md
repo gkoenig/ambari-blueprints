@@ -3,7 +3,44 @@
 ## Prerequisites:
 * a linux box with CentOS/RH (I tried 6.6)
 * at least 4GB Ram
-* configured repositories to access HDP and HDP-utils
+* configured repositories to access Ambari,HDP and HDP-utils
+  * Ambari (etc/yum.repos.d/ambari.repo)
+```
+[ambari-1.x]
+name=Ambari 1.x
+baseurl=http://public-repo-1.hortonworks.com/ambari/centos6/1.x/GA
+gpgcheck=1
+gpgkey=http://public-repo-1.hortonworks.com/ambari/centos6/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+
+[Updates-ambari-1.7.0]
+name=ambari-1.7.0 - Updates
+baseurl=http://public-repo-1.hortonworks.com/ambari/centos6/1.x/updates/1.7.0
+gpgcheck=1
+gpgkey=http://public-repo-1.hortonworks.com/ambari/centos6/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+```
+  * HDP (etc/yum.repos.d/HDP.repo)
+```
+[HDP-2.1]
+name=HDP
+baseurl=http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.7.0
+path=/
+enabled=1
+gpgcheck=0
+```
+  * HDP-utils (etc/yum.repos.d/HDP-UTILS.repo)
+```
+[HDP-UTILS-1.1.0.19]
+name=HDP-UTILS
+baseurl=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.19/repos/centos6
+path=/
+enabled=1
+gpgcheck=0
+
+```
 * Ambari server is running (examples are using port 8080)
 
 ## The blueprint will
