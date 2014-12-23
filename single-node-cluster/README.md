@@ -33,8 +33,10 @@
 
 ## Usage:
 
-Hostname(FQDN): *ambari-1.geko* , change it to match your hostname
+Hostname(FQDN): *ambari-1.geko* , change it to match your hostname.
+
 Ambari credentials: *admin/admin* , the default settings, you should change it !
+
 ```
 git clone https://github.com/gkoenig/ambari-blueprints
 cd ambari-blueprints/single-node-cluster
