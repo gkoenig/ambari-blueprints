@@ -13,7 +13,7 @@ Hortonworks HDP clusters. The required steps are (high-level view):
 * set and apply your JSON configurations by using Ambaris REST API
 
 
-1.) set up a [single node cluster](https://github.com/gkoenig/ambari-blueprints/single-node-cluster)
+1.) set up a [single node cluster](https://github.com/gkoenig/ambari-blueprints/tree/master/single-node-cluster)
 
 Definition and installation of a Hortonworks HDP 2.1 cluster
 
