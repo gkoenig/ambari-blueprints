@@ -1,0 +1,89 @@
+ {
+  "configurations" : [
+    {
+      "nagios-env" : {
+        "nagios_contact": "<mail>@<yourprovider>"
+      }
+    },
+    {
+    "global": {
+      "hive_metastore_user_passwd": "pw"
+      }
+    },
+    {
+      "hive-site": {
+        "javax.jdo.option.ConnectionPassword": "pw",
+        "hive.security.authenticator.manager": "org.apache.hadoop.hive.ql.security.HadoopDefaultAuthenticator",
+        "hive.execution.engine": "tez",
+        "hive.exec.failure.hooks": "",
+        "hive.exec.pre.hooks": "",
+        "hive.exec.post.hooks": ""
+      }
+    }
+  ],
+  "host_groups" : [
+    {
+      "name" : "single-master",
+      "components" : [
+        {
+          "name" : "NAMENODE"
+        },
+        {
+          "name" : "SECONDARY_NAMENODE"
+        },       
+        {
+          "name" : "DATANODE"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "RESOURCEMANAGER"
+        },
+        {
+          "name" : "NODEMANAGER"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HISTORYSERVER"
+        },
+        {
+          "name" : "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "GANGLIA_SERVER"
+        },
+        {
+          "name" : "HIVE_SERVER"
+        },
+        {
+          "name" : "HIVE_CLIENT"
+        },
+        {
+          "name" : "TEZ_CLIENT"
+        },
+        {
+          "name" : "WEBHCAT_SERVER"
+        },
+        {
+          "name" : "MYSQL_SERVER"
+        },
+        {
+          "name" : "NAGIOS_SERVER"
+        }],
+      "cardinality" : "1" }
+  ],
+  "Blueprints" : {
+    "blueprint_name" : "single-node",
+    "stack_name" : "HDP",
+    "stack_version" : "2.1"
+  }
+}

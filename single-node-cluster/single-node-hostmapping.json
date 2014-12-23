@@ -1,0 +1,7 @@
+{ "blueprint":"single-node",
+  "host_groups":[
+    { "name":"single-master",
+      "hosts":[ { "fqdn":"ambari-1.geko" } ]
+    }
+    ]
+}
