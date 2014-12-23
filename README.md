@@ -14,6 +14,7 @@ Hortonworks HDP clusters. The required steps are (high-level view):
 
 
 1.) set up a [single node cluster](https://github.com/gkoenig/ambari-blueprints/single-node-cluster)
+
 Definition and installation of a Hortonworks HDP 2.1 cluster
 
 ![ambaridashboard](https://cloud.githubusercontent.com/assets/50473/5542652/6145a324-8ae9-11e4-87ea-d9492e29d7f5.png)
