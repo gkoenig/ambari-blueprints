@@ -1,0 +1,11 @@
+{ "blueprint":"minicluster",
+  "default_password" : "12345678",
+  "host_groups":[
+    { "name":"host_group_1",
+      "hosts":[ { "fqdn":"pg2.geko" } ]
+    },
+    { "name":"host_group_2",
+      "hosts":[ { "fqdn":"pg3.geko" } ]
+    }
+    ]
+}

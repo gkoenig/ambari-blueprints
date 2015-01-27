@@ -1,0 +1,96 @@
+{
+  "configurations" : [
+    {
+      "core-site" : {
+        "fs.defaultFS" : "hdfs://%HOSTGROUP::host_group_1%:8020",
+        "hadoop.proxyuser.hcat.groups" : "users",
+        "hadoop.proxyuser.hcat.hosts" : "%HOSTGROUP::host_group_2%",
+        "hadoop.proxyuser.hive.groups" : "users",
+        "hadoop.proxyuser.hive.hosts" : "%HOSTGROUP::host_group_2%",
+        "hadoop.security.authentication" : "simple",
+        "hadoop.security.authorization" : "false",
+        "mapreduce.jobtracker.webinterface.trusted" : "false"
+      }
+    },
+    {
+      "hadoop-env" : {
+        "namenode_heapsize" : "512m",
+        "namenode_opt_maxnewsize" : "200m",
+        "namenode_opt_maxpermsize" : "256m",
+        "namenode_opt_newsize" : "200m",
+        "namenode_opt_permsize" : "128m"
+      }
+    },
+    { "nagios-env" : {
+        "nagios_contact": "a@bc.de"
+      }
+    },
+    {
+      "hive-env" : {
+        "hive_metastore_user_passwd": "p"
+      }
+    },
+    {
+      "hdfs-site" : {
+        "dfs.replication" : "2",
+        "dfs.replication.max" : "2",
+        "dfs.webhdfs.enabled" : "true"
+      }
+    }
+  ],
+  "host_groups" : [
+    {
+      "name" : "host_group_1",
+      "configurations" : [ ],
+      "components" : [
+        { "name" : "ZOOKEEPER_SERVER"        },
+        { "name" : "KAFKA_BROKER"        },
+        { "name" : "GANGLIA_SERVER"        },
+        { "name" : "NAMENODE"        },
+        { "name" : "NODEMANAGER"        },
+        { "name" : "HDFS_CLIENT"        },
+        { "name" : "YARN_CLIENT"        },
+        { "name" : "HCAT"        },
+        { "name" : "NAGIOS_SERVER"        },
+        { "name" : "MAPREDUCE2_CLIENT"        },
+        { "name" : "TEZ_CLIENT"        },
+        { "name" : "DATANODE"        },
+        { "name" : "GANGLIA_MONITOR"        }
+      ],
+      "cardinality" : "1"
+    },
+    {
+      "name" : "host_group_2",
+      "configurations" : [ ],
+      "components" : [
+        { "name" : "ZOOKEEPER_SERVER"        },
+        { "name" : "ZOOKEEPER_CLIENT"        },
+        { "name" : "PIG"        },
+        { "name" : "HISTORYSERVER"        },
+        { "name" : "KAFKA_BROKER"        },
+        { "name" : "HIVE_SERVER"        },
+        { "name" : "HCAT"        },
+        { "name" : "SECONDARY_NAMENODE"        },
+        { "name" : "TEZ_CLIENT"        },
+        { "name" : "HIVE_METASTORE"        },
+        { "name" : "APP_TIMELINE_SERVER"        },
+        { "name" : "NODEMANAGER"        },
+        { "name" : "HDFS_CLIENT"        },
+        { "name" : "HIVE_CLIENT"        },
+        { "name" : "YARN_CLIENT"        },
+        { "name" : "MAPREDUCE2_CLIENT"       },
+        { "name" : "DATANODE"        },
+        { "name" : "MYSQL_SERVER"        },
+        { "name" : "GANGLIA_MONITOR"        },
+        { "name" : "WEBHCAT_SERVER"        },
+        { "name" : "RESOURCEMANAGER"        }
+      ],
+      "cardinality" : "1"
+    }
+  ],
+  "Blueprints" : {
+    "blueprint_name" : "minicluster",
+    "stack_name" : "HDP",
+    "stack_version" : "2.2"
+  }
+}
